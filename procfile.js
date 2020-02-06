@@ -55,3 +55,4 @@ function loadProc(filename) {
 
 module.exports.loadProc = loadProc;
 module.exports.procs    = procs;
+web: bundle exec puma -C config/puma.rb
