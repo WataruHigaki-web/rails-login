@@ -10,7 +10,7 @@ class UsersController < ApplicationController
   end
   def show
     @user = User.find(params[:id])
-    redirect_to root_url and return unless FILL_IN
+    # redirect_to root_url and return unless 
   end
   def destroy
     User.find(params[:id]).destroy
@@ -20,9 +20,9 @@ class UsersController < ApplicationController
   def create 
     @user = User.new(user_params)
     if @user.save
-      @user.send_activation_email
+      # @user.send_activation_email
       flash[:info] = "Please check your email to activate your account."
-      redirect_to root_url
+      redirect_to @user
   else
     render 'new'
   end
